@@ -1,0 +1,213 @@
+
+
+/* 
+-------- RESETS --------
+*/
+
+/* title login/register */
+#heading_title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+/* mensage error */
+#error {
+  color: #a52121;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login_error,
+.register_error {
+  display: none;
+}
+
+.login_error.invalid,
+.register_error.invalid {
+  display: block;
+}
+
+
+/* checkbox */
+input[type="checkbox"] {
+  cursor: pointer;
+  margin-right: .5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all .2s ease;
+}
+
+input[type="checkbox"]:hover {
+  border-color: var(--color-primary);
+}
+
+/* hide pass icon */
+#hide_pass {
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
+
+/* 
+------- FORMS STYLE ---------
+*/
+
+.forms {
+  height: 130vh;
+}
+
+.forms_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 0 5rem;
+}
+
+.forms_box {
+  width: 100%;
+  max-width: 450px;
+  background-color: var(--color-white);
+  padding: 3rem 4rem 4rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form {
+  width: 100%;
+}
+
+.form {
+  display: none;
+  animation: l-3d-bottom .3s;
+  transition: all 300ms ease-in-out;
+}
+
+.form.active {
+  display: block;
+}
+
+.form form {
+  width: 100%;
+}
+
+.form .inputbox {
+  width: 100%;
+  position: relative;
+  margin-bottom: 2rem;
+  height: 5rem;
+}
+
+/* labels */
+.form .inputbox label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1rem;
+  color: #333;
+  font-size: 2rem;
+}
+
+/* inputs */
+.form .inputbox input {
+  width: 100%;
+  height: 100%;
+  padding-left: 3.3rem;
+  font-size: 1.8rem;
+  color: #000;
+  border-radius: 1rem;
+  border: 2px solid #000;
+  transition: border-color .2s ease;
+}
+
+.form .inputbox input.invalid {
+  border-color: #a52121;
+}
+
+.form .inputbox input:valid, 
+.form .inputbox input:focus {
+  border-color: var(--color-primary) ;
+}
+
+.form .inputbox input::placeholder {
+  color: #333;
+}
+
+.form .forgot a {
+  font-size: 1.4rem;
+  color: #0f48e4;
+  text-decoration: underline;
+}
+
+.form .terms, .form .forgot {
+  margin-bottom: 2rem;
+}
+
+.form .terms {
+  display: flex;
+  align-items: center;
+}
+
+.form .terms a {
+  font-size: 1.4rem;
+}
+
+.form #form_footer {
+  font-size: 1.5rem;
+}
+
+.form #form_footer a {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: all .2s ease;
+}
+
+.form #form_footer a:hover {
+  margin-left: .5rem;
+}
+
+/* btn style */
+.form .form_btn {
+  display: block;
+  width: 100%;
+  padding: 1.5rem 0;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 3px;
+  border-radius: 1rem;
+  font-weight: 600;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+}
+
+.form .form_btn:hover {
+  letter-spacing: 5px;
+}
+
+
+.pass_validate  {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.pass_validate span {
+  display: block;
+}
+
+
+
+
+
+

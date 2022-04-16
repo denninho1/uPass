@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!------------- METAS -------------->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!------------- LINK STYLES MAIN CSS -------------->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!------------- LINK FONTAWESOME ICONS -------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/all.css"/> -->
+    <!------------- TITULO DA PÁGINA -------------->
+    <title>uPass | Gerencie sua senha de forma fácil</title>
+  </head>
+  <body>
+    <!------------- MAIN -------------->
+    <main class="main">
+
+      <!------------- HEADER -------------->
+      <header class="header">
+        <div class="container">
+          <div class="header_navs">
+            <div class="menu" title="menu">
+              <i class="fas fa-bars" id="menu-btn"></i>
+            </div>
+
+            <a href="./index.html" id="logo" title="Página principal">uPass</a>
+
+            <!------------- NAVEGAÇÃO LATERAL -------------->
+            <aside class="nav_lateral">
+              <i class="fas fa-times" id="close_nav"></i>
+              <nav class="navs_content">
+                <ul class="navs">
+                  <li>
+                    <a href="#home" title="Voltar para página principal">
+                      <i class="fas fa-home"></i> 
+                      Página principal
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="./cofre.html" title="Meu cofre" >
+                      <i class="fas fa-archive"></i> 
+                      Meu cofre
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="#" title="Como funciona nossos serviços">
+                      <i class="fas fa-question"></i>
+                       Como funciona
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#planos" title="Nossos planos">
+                      <i class="fas fa-shopping-cart"></i>
+                       Planos
+                    </a>
+                  </li>
+        
+                  <li>
+                    <a href="./shared.html" title="Compartilhamentos">
+                      <i class="fas fa-share"></i>
+                       Compartilhamentos
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="./gerador-senha.html" title="Gerador de senhas">
+                      <i class="fas fa-copy"></i>
+                       Gerador de senhas
+                    </a>
+                  </li>
+                </ul>
+                <ul class="navs_login">
+                  <li>
+                    <a href="#" title="Configurações da conta">
+                      <i class="fas fa-cog"></i>
+                       Configurações
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#" title="Sair da conta">
+                      <i class="fas fa-user"></i>
+                       Sair
+                    </a>
+                  </li>
+                </ul>
+
+                <div class="navs_no_login">
+                  <a href="./login.html" title="Faça login ou cadastro" >
+                    <i class="fas fa-user"></i>
+                     Fazer login
+                  </a>
+                </div>
+              </nav>
+            </aside>
+
+            <div class="user_no_login">
+              <a href="./login.html" id="login_link" title="Faça login ou cadastro">
+                Entrar
+              </a>
+            </div>
+
+            <div class="user_login">
+              <div class="img_profile">
+                <img id="img_user" src="./images/profile.jpg" alt="imagem do usuário">
+              </div>
+              <span id="user_name">Isabelle203</span>
+              <a href="#"></a>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!------------- HOME -------------->
+      <section class="home" id="home">
+        <div class="home_info">
+          <h1>Se conecte, compartilhe senhas <br> e seja 
+            redirecionado de maneira segura.</h1>
+          <div class="starting">
+            <a href="./login.html" title="Comece agora a utilizar nossos serviços">
+              Comece agora
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!------------- BENEFICIOS -------------->
+      <section class="beneficios">
+        <div class="container">
+          <!------------- CARDS -------------->
+          <div class="cards">
+            <div class="card">
+              <header class="card_icon">
+                <img src="./images/seguro.svg" alt="Imagem de exemplo">
+              </header>
+              <div class="info">
+                <h3>Segurança</h3>
+                <span class="small_text">Suas senhas estão totalmente seguras conosco. 
+                  Contamos com uma criptografia de ponta a ponta.</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <header class="card_icon">
+                <img src="./images/compartilhamento.svg" alt="Imagem de exemplo">
+              </header>
+              <div class="info">
+                <h3>Armazenamento</h3>
+                <span class="small_text">Aqui você pode armazenar suas senhas em 
+                  um cofre do tamanho ideal para você.</span>
+              </div>
+            </div>
+
+            <div class="card">
+              <header class="card_icon">
+                <img src="./images/compartilhamento.svg" alt="Imagem de exemplo">
+              </header>
+              <div class="info">
+                <h3>Compartilhamento</h3>
+                <span class="small_text">Compartilhe suas senhas de forma toltamente segura
+                  com quem você quiser</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!------------- PLANOS -------------->
+      <section class="planos" id="planos">
+        <div class="container">
+          <h1 id="planos_title">Nossos planos</h1>
+          <p class="small_text">Encontre o plano ideal para você e 
+            ja comece a utilizar agora mesmo com os planos free e master!
+          </p>
+          <!------------- CARDS -------------->
+          <div class="cards">
+            <!------- PLANO FREE ------>
+            <div class="card" title="Plano Free">
+              <header>
+                <h2>Free</h2>
+              </header>
+              <ul class="info">
+                <li>
+                  <span class="small_text">15 senhas grátis</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Compartilhamento individual</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Gere senhas de até 10 caracteres</p>
+                </li>
+              </ul>
+              <footer>
+                <span id="price" title="Plano gratuitamente">R$ 0</span>
+                <a href="#" id="btn_free" title="Comece agora utilizando o plano free">
+                  Começar agora
+                </a>
+              </footer>
+            </div>
+
+            <!----- PLANO MASTER ------>
+            <div class="card" title="Planos Master" >
+              <header>
+                <h2 id="master">Master</h2>
+              </header>
+              <ul class="info">
+                <li>
+                  <span class="small_text">Senhas ilimitadas</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Compartilhamento em grupo</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Gere senhas de até 25 caracteres</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Acesso em qualquer tipo de dispositivo</span>
+                </li>
+
+                <li>
+                  <span class="small_text">Seja redirecionado logado</span>
+                </li>
+              </ul>
+              <footer>
+                <span id="price" title="Plano no valor de R$ 5,00 Reais" >R$ 5</span>
+                <a href="#" id="btn_master" title="Comece agora utilizando o plano master">
+                  Começar agora
+                </a>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-------- FOOTER ------->
+      <footer class="footer">
+        <a href="#" title="Desenvolvido pela equipe uPass">
+          &copy; Desenvolvido por uPass
+        </a>
+      </footer>
+    </main>
+
+    <!------------- SCRITPS -------------->
+    <script src="./js/script.js"></script>
+  </body>
+</html>
