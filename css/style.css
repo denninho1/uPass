@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* @import url(../css/fonts.css); */
-
 /* 
 --------- ROOT --------
 */
-
 :root {
   --color-primary: #1ca184;
   --color-primary-dark: #2c7e6c;
@@ -20,7 +16,6 @@
 /* 
 --------- RESETS --------
 */
-
 * {
   margin: 0;
   padding: 0;
@@ -71,10 +66,7 @@ img {
   max-width: 1280px;
 }
 
-/* 
---------- LOGO STYLE --------
-*/
-
+/* LOGO STYLE*/
 #logo {
   color: var(--color-white);
   font-size: 2.5rem;
@@ -83,10 +75,7 @@ img {
   letter-spacing: 1px;
 }
 
-/* 
---------- CARDS STYLE --------
-*/
-
+/* CARD STYLE */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -104,21 +93,16 @@ img {
   border-radius: 1rem;
 }
 
-/* 
-SMALL TEXT STYLE
-*/
+/* SMALL TEXT STYLE*/
 .small_text {
   font-size: 1.6rem;
   color: var(--color-black-light);
   font-weight: 400;
 }
 
-
-
 /* 
 --------- HEADER STYLE --------
 */
-
 .header {
   position: sticky;
   top: 0;
@@ -209,29 +193,58 @@ SMALL TEXT STYLE
 }
 
 
-
 /* 
 --------- HOME STYLE --------
 */
 
-.home {
-  background: linear-gradient(to bottom,
-  rgba(0, 0, 0, 0.7),
-  rgba(0, 0, 0, 0.7)),
-  url(../images/bg2.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 3rem 0;
-  min-height: 40vh;
+@keyframes zoom {
+  0% {
+    transform: scale(1.1);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.1);
+  }
 }
 
+.home {
+  position: relative;
+  height: 40vh;
+  overflow: hidden;
+}
+
+.home .img_wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.home .img_wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6));
+}
+
+.home .img_wrapper img {
+  object-position: center 70%;
+  animation: zoom 10s ease-in-out infinite;
+}
+
+
 .home_info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
   width: 90%;
   margin: 0 auto;
 }
