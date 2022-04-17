@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!------------- LINK STYLES MAIN CSS -------------->
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/all.css"/>
+    <!------------- LINK FONTAWESOME ICONS -------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!------------- LINK STYLE GENEREATE PASS CSS -------------->
     <link rel="stylesheet" href="css/generate_pass.css"/>
     <title>uPass | Gerador de senha</title>
   </head>
@@ -111,41 +114,42 @@
 
       <section class="generate">
         <div class="container">
-          <div class="generate_container">
+          <form class="generate_container">
             <h1>Gerar uma senha</h1>
     
             <div class="generate_pass">
-              <button id="btn_copy" title="Copiar senha"><i class="fas fa-copy"></i></button>
-              <input type="text" id="input_generate" value="">
+              <span class="copied">Copiado!</span>
+              <button class="btn_copy" title="Copiar senha"><i class="fas fa-copy"></i></button>
+              <input type="text" class="input_generate" value="">
             </div> 
    
-            <div class="lenght_container">
-              <input type="range" value="8" min="1"  max="40" name="input_length" id="input_length" >
-              <span id="generate_text"></span>
+            <div class="length_container">
+              <input type="range" value="8" min="1"  max="40" name="input_length" class="input_length" >
+              <input type="number" value="8" min="1" max="40" maxlength="2" class="length_number" required>
             </div>
    
             <div class="uppercase_container">
-              <input type="checkbox" name="input_uppercase" id="input_uppercase" checked>
+              <input type="checkbox" name="input_uppercase" class="input_uppercase" id="input_uppercase" checked>
               <label for="input_uppercase">Letras maiúscula</label>
             </div>
    
             <div class="lowercase_container">
-              <input type="checkbox" name="input_lowercase" id="input_lowercase" checked>
+              <input type="checkbox" name="input_lowercase" class="input_lowercase" id="input_lowercase" checked>
               <label for="input_lowercase">Letras minúsculas</label>
             </div>
    
             <div class="numbers_container">
-              <input type="checkbox" name="input_numbers" id="input_numbers" checked>
+              <input type="checkbox" name="input_numbers" class="input_numbers" id="input_numbers" checked>
               <label for="input_numbers">Números</label>
             </div>
    
             <div class="symbols_container">
-              <input type="checkbox" name="input_symbols" id="input_symbols" checked>
+              <input type="checkbox" name="input_symbols" class="input_symbols" id="input_symbols" checked>
               <label for="input_symbols">Simbolos</label>
             </div> 
 
-            <button id="generate_btn" title="Gere uma senha">Gerar senha</button>
-          </div>
+            <button type="submit" class="generate_btn" title="Gere uma senha">Gerar senha</button>
+          </form>
         </div>
       </section>
       <footer class="footer">
