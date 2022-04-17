@@ -892,6 +892,37 @@ img {
   }
 }
 
+@media (max-width: 580px) {
+  .shared .shared_header,
+  .cofre .cofre_header  {
+    flex-wrap: wrap-reverse;
+    
+  }
+
+  .shared .shared_header .form_search,
+  .cofre .cofre_header .form_search {
+    margin: 0 0 1rem;
+  }
+
+  .shared .shared_header .new_create,
+  .cofre .cofre_header .new_create {
+    width: 100%;
+  }
+
+  .shared .shared_header .new_create button,
+  .cofre .cofre_header .new_create button {
+    width: 100%;
+  }
+  .shared .shared_header .filter,
+  .cofre .cofre_header .filter {
+    margin: 0 auto;
+  }
+  .shared .shared_header .filter_btn,
+  .cofre .cofre_header .filter_btn {
+    text-align: center;
+  }
+}
+
 @media (max-width: 991px) {
   html {
     font-size: 55%;
