@@ -213,7 +213,7 @@ img {
 
 .home {
   position: relative;
-  height: 40vh;
+  height: 60vh;
   overflow: hidden;
 }
 
@@ -278,7 +278,6 @@ img {
 
 .home_info a:hover {
   letter-spacing: 3px;
-  background-color: var(--color-primary);
 }
 
 /* 
@@ -393,24 +392,19 @@ img {
 }
 
 .planos .cards .card ul li {
-  position: relative;
   margin-bottom: 1rem;
-  padding-left: 1rem;
-}
-
-.planos .cards .card ul li::after {
-  content: '';
-  position: absolute;
-  top: .9rem;
-  left: -.5rem;
-  width: .5rem;
-  height: .5rem;
-  background-color: var(--color-black);
-  border-radius: 50% ;
+  display: flex;
+  align-items: center;
 }
 
 .planos .cards .card ul li:last-child {
   margin-bottom: 5rem;
+}
+
+.planos .cards .card ul li i{
+  color: var(--color-primary);
+  font-size: 1.7rem;
+  padding-right: 1rem;
 }
 
 .planos .cards .card #price {
@@ -689,8 +683,9 @@ img {
 
 .shared .shared_header .new_create button,
 .cofre .cofre_header .new_create button {
-  padding: 1.5rem 2rem;
-  border-radius: 1rem;
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
   background-color: var(--color-primary);
   cursor: pointer;
   color: #fff;
@@ -722,6 +717,7 @@ img {
 
 
 .footer {
+  margin-top: 50vh;
   padding: 1rem 0;
   width: 100%;
   background-color: var(--color-primary-dark);
@@ -906,13 +902,12 @@ img {
 
   .shared .shared_header .new_create,
   .cofre .cofre_header .new_create {
-    width: 100%;
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 10;
   }
 
-  .shared .shared_header .new_create button,
-  .cofre .cofre_header .new_create button {
-    width: 100%;
-  }
   .shared .shared_header .filter,
   .cofre .cofre_header .filter {
     margin: 0 auto;
@@ -929,9 +924,9 @@ img {
   }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 480px) {
   html {
     font-size: 50%;
   }
-}
+} */
 
