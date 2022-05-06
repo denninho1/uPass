@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <!------------- METAS -------------->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!------------- LINK STYLES MAIN CSS -------------->
+    <link rel="stylesheet" href="css/style.css"/>
+    <!------------- LINK FONTAWESOME ICONS -------------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!------------- LINK STYLE COFRE CSS -------------->
+    <link rel="stylesheet" href="css/cofre.css"/>
+    <title>uPass | Seu cofre</title>
+  </head>
+  <body>
+    <!------------- MAIN -------------->
+    <main class="main">
+
+     <!------------- HEADER -------------->
+     <header class="header">
+      <div class="container">
+        <div class="header_navs">
+          <div class="menu" title="menu">
+            <i class="fas fa-bars" id="menu-btn"></i>
+          </div>
+
+          <!------------- NAVEGAÇÃO LATERAL -------------->
+          <aside class="nav_lateral">
+            <i class="fas fa-times" id="close_nav"></i>
+            <nav class="navs_content">
+              <ul class="navs">
+                <li>
+                  <a href="./index.html" title="Voltar para página principal">
+                    <i class="fas fa-home"></i> 
+                    Página principal
+                  </a>
+                </li>
+      
+                <li>
+                  <a href="./cofre.html" title="Meu cofre" >
+                    <i class="fas fa-archive"></i> 
+                    Meu cofre
+                  </a>
+                </li>
+      
+                <li>
+                  <a href="./shared.html" title="Compartilhamentos">
+                    <i class="fas fa-share"></i>
+                     Compartilhamentos
+                  </a>
+                </li>
+
+                <li>
+                  <a href="./gerador-senha.html" title="Gerador de senhas">
+                    <i class="fas fa-copy"></i>
+                     Gerador de senhas
+                  </a>
+                </li>
+              </ul>
+              <ul class="navs_login">
+                <li>
+                  <a href="#" title="Configurações da conta">
+                    <i class="fas fa-cog"></i>
+                     Configurações
+                  </a>
+                </li>
+                <li>
+                  <a href="#" title="Sair da conta">
+                    <i class="fas fa-user"></i>
+                     Sair
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+          <a href="./index.html" id="logo" title="Página principal">uPass</a>
+
+          <div class="user_login">
+            <div class="img_profile">
+              <img id="img_user" src="./images/profile.jpg" alt="imagem do usuário">
+            </div>
+            <span id="user_name">Isabelle203</span>
+            <a href="#"></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+      <!------------- COFRE -------------->
+
+      <section class="cofre">
+        <div class="cofre_container container">
+          <!------------- FILTRAR EXIBIÇÕES DAS SENHAS -------------->
+          <nav class="cofre_header">
+            <div class="filter">
+              <button class="filter_btn">
+                <span class="filter_item">Todas as pastas</span>
+                <i class="fas fa-chevron-down"></i>
+              </button>
+              <ul class="filter_items">
+                <li class="all_folder" id="filter_item">Todas as pastas</li>
+                <li class="all_passwords" id="filter_item">Todas as senhas</li>
+              </ul>
+            </div>
+
+            <!------------- SEARCH -------------->
+            <form action="#" class="form_search">
+              <button 
+                type="submit" 
+                id="btn_search">
+                <i class="fas fa-search"></i>
+              </button>
+              <input 
+                type="search" 
+                name="input_search" 
+                id="input_search" 
+                placeholder="Procure uma senha"
+                required >
+            </form>
+
+            <div class="new_create">
+              <button class="">
+                <span><i class="fas fa-plus"></i></span>
+              </button>
+            </div>
+          </nav>
+         <!------------- CARDS -------------->
+          <div class="cards">
+            <div class="card card_streaming">
+              <div class="imgs_wrapper">
+                <img src="./images/netflix.png" alt="">
+                <img src="./images/prime-video.png" alt="">
+              </div>
+              <div class="text">
+                <h2 id="name_folder">Streaming</h2>
+                <span id="total_pass">5 senhas</span>
+              </div>
+              <a href="#"></a>
+              <div class="config_card">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+
+            <div class="card card_redessociais">
+              <div class="imgs_wrapper">
+                <img src="./images/facebook.png" alt="">
+              </div>
+              <div class="text">
+                <h2 id="name_folder">Redes sociais</h2>
+                <span id="total_pass">1 senha</span>
+              </div>
+              <a href="#"></a>
+                            <div class="config_card">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+
+            <div class="card card_wifi">
+              <div class="imgs_wrapper">
+                <img src="./images/wi-fi.png" alt="">
+              </div>
+              <div class="text">
+                <h2 id="name_folder">Wi-fi</h2>
+                <span id="total_pass">12 senhas</span>
+              </div>
+              <a href="#"></a>
+                            <div class="config_card">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+
+            <div class="card card_site">
+              <div class="imgs_wrapper">
+                <img src="./images/dropbox.png" alt="">
+                <img src="./images/amazon.png" alt="">
+              </div>
+              <div class="text">
+                <h2 id="name_folder">Sites</h2>
+                <span id="total_pass">3 senhas</span>
+              </div>
+              <a href="#"></a>
+                            <div class="config_card">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+
+            <div class="card cartaoes">
+              <div class="imgs_wrapper">
+                <img src="./images/cartao-de-credito.png" alt="">
+              </div>
+              <div class="text">
+                <h2 id="name_folder">Cartões de credito</h2>
+                <span id="total_pass">1 senha</span>
+              </div>
+              <a href="#"></a>
+                            <div class="config_card">
+                <i class="fas fa-ellipsis-h"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <a href="#" title="Desenvolvido pela equipe uPass">&copy; Desenvolvido por uPass</a>
+      </footer>
+    </main>
+    <!------------- SCRIPTS -------------->
+    <script src="./js/script.js"></script>
+    <script src="./js/filters.js"></script>
+  </body>
+</html>
