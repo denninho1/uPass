@@ -93,6 +93,15 @@ img {
   border-radius: 1rem;
 }
 
+.title_section {
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  color: var(--color-black);
+  padding-bottom: 1rem;
+  animation: l-bottom .5s;
+}
+
 /* SMALL TEXT STYLE*/
 .small_text {
   font-size: 1.6rem;
@@ -283,13 +292,18 @@ img {
 /* 
 --------- DETAILS STYLE --------
 */
-
 .beneficios {
   padding: 3rem 0;
 }
 
+.beneficios .cards {
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
 .beneficios .cards .card {
-  flex: 1 200px;
   text-align: center;
 }
 
@@ -328,6 +342,18 @@ img {
   animation: l-3d-right 500ms;
 }
 
+.beneficios .cards .card:nth-child(4) {
+  animation: l-3d-left 500ms;
+}
+
+.beneficios .cards .card:nth-child(5) {
+  animation: l-3d-bottom 500ms;
+}
+
+.beneficios .cards .card:nth-child(6) {
+  animation: l-3d-right 500ms;
+}
+
 /* 
 --------- PLANOS STYLE --------
 */
@@ -337,13 +363,7 @@ img {
 }
 
 .planos h1 {
-  width: max-content;
-  margin: 0 auto;
-  font-size: 2rem;
-  letter-spacing: 2px;
-  color: var(--color-black);
-  padding-bottom: 1rem;
-  animation: l-bottom .5s;
+
 }
 
 .planos p {
