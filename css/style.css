@@ -357,13 +357,8 @@ img {
 /* 
 --------- PLANOS STYLE --------
 */
-
 .planos {
   padding: 4rem 0;
-}
-
-.planos h1 {
-
 }
 
 .planos p {
@@ -459,7 +454,6 @@ img {
 /* 
 --------- NAVEGAÇÃO LATERAL STYLE --------
 */
-
 .nav_lateral {
   position: fixed;
   top: 0;
@@ -569,7 +563,6 @@ img {
 /* 
 
 */
-
 .form_search {
   width: 100%;
   background-color: #eee;
@@ -681,8 +674,6 @@ img {
   background-color: #eee;
 }
 
-
-
 .shared .shared_header .filter_btn i,
 .cofre .cofre_header .filter_btn i {
   font-size: 1.3rem;
@@ -718,11 +709,9 @@ img {
   background-color: var(--color-primary-dark);
 }
 
-
 /* 
 --------- MAIN STYLE --------
 */
-
 .main {
   position: relative;
   padding-left: 0;
@@ -734,7 +723,6 @@ img {
   width: calc(100% - 27rem); */
   padding-left: 27rem;
 }
-
 
 .footer {
   margin-top: 50vh;
@@ -752,12 +740,10 @@ img {
   animation: l-3d-bottom 500ms;
 }
 
-
 /* 
 --------- ANIMATIONS --------
  l = load
 */
-
 @keyframes l-left {
   0% {
     transform: translateX(-10rem);
@@ -864,13 +850,11 @@ img {
 /* 
 --------- RESPONSIVIDADE --------
 */
-
 @media (min-width: 1920px) {
   .container {
     width: 95%;
     max-width: 1920px;
   }
-
 
   .menu {
     display: none;
@@ -898,21 +882,28 @@ img {
   .navs_no_login {
     display: none;
   }
+}
 
+@media (max-width: 1090px) {
+  .beneficios .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
-
   .main.active {
     padding-left: 0;
   }
 }
 
 @media (max-width: 580px) {
+  .beneficios .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
   .shared .shared_header,
   .cofre .cofre_header  {
     flex-wrap: wrap-reverse;
-    
   }
 
   .shared .shared_header .form_search,
