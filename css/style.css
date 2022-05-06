@@ -60,6 +60,7 @@ img {
   object-fit: cover;
 }
 
+/* CONTAINER STYLE*/
 .container {
   width: 95%;
   margin: 0 auto;
@@ -75,7 +76,7 @@ img {
   letter-spacing: 1px;
 }
 
-/* CARD STYLE */
+/* CARDS STYLE */
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -93,6 +94,7 @@ img {
   border-radius: 1rem;
 }
 
+/* TITLE SECTIONS STYLE*/
 .title_section {
   text-align: center;
   font-size: 2rem;
