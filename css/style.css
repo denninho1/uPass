@@ -697,18 +697,17 @@ img {
   display: none;
 }
 
-.new_create,
-.new_create {
+.create_new {
+
+}
+
+.create_new button {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-}
-
-.new_create button,
-.new_create button {
-  border-radius: 50%;
   width: 5rem;
   height: 5rem;
+  border-radius: 50%;
   background-color: var(--color-primary);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
@@ -717,8 +716,7 @@ img {
   transition: background-color 200ms linear;
 }
 
-.new_create button:hover,
-.new_create button:hover {
+.create_new button:hover {
   background-color: var(--color-primary-dark);
 }
 
