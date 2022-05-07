@@ -1,6 +1,6 @@
 
 /* 
--------- RESETS --------
+-------- GLOBAL STYLE --------
 */
 
 /* title login/register */
@@ -55,10 +55,6 @@ input[type="checkbox"]:hover {
 /* 
 ------- FORMS STYLE ---------
 */
-
-.forms {
-  height: 130vh;
-}
 
 .forms_container {
   display: flex;
