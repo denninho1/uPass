@@ -94,11 +94,14 @@
         </button>
 
         <div class="create_new_container">
-          <h2>O que você deseja criar ?</h2>
+          <h2 class="text_heading" >O que você deseja criar ?</h2>
 
-          <div class="">
-            <button class="btn_option" >Selecione uma opção</button>
-            <div class="list">
+          <div class="options">
+            <button class="btn_option">
+              <span class="option_selected" >Selecione uma opção</span>
+              <i class="fa-solid fa-caret-down"></i>
+            </button>
+            <div class="options_list">
               <span class="option">Nova pasta</span>
               <span class="option">Nova senha</span>
             </div>
@@ -223,5 +226,7 @@
     <script src="../js/script.js"></script>
     <!--------- PAGE SCRIPT --------->
     <script src="../js/filters.js"></script>
+    <!------ CREATE NEW SCRIPT -------->
+    <script src="../js/create_new.js"></script>
   </body>
 </html>
