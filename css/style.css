@@ -717,8 +717,8 @@ img {
   transition: background-color 200ms linear;
 }
 
-.shared .shared_header .new_create button:hover,
-.cofre .cofre_header .new_create button:hover {
+.new_create button:hover,
+.new_create button:hover {
   background-color: var(--color-primary-dark);
 }
 
