@@ -96,11 +96,11 @@ function validateInputs() {
         passLength.value = 40;
         inputShowLength.value = 40;
         innerPass();
-    } else if (inputShowLength.value === 0) {
+    } else if (inputShowLength.value <= -1) {
         passLength.value = 1;
         inputShowLength.value = 1;
         innerPass();
-    }
+    } 
 }
 
 passLength.addEventListener('input', () => {
