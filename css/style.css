@@ -369,7 +369,7 @@ img {
 }
 
 .planos .cards {
-  padding: 4rem 0 0;
+  padding: 3rem 0 0;
   align-items: stretch;
   column-gap: 50px;
 }
@@ -396,7 +396,7 @@ img {
 
 .planos .cards .card h2 {
   text-align: center;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
   font-size: 2.5rem;
   letter-spacing: 3px;
   color: var(--color-primary-light);
@@ -409,19 +409,15 @@ img {
 }
 
 .planos .cards .card ul li {
-  margin-bottom: 1rem;
+  line-height: 2.8rem;
   display: flex;
   align-items: center;
-}
-
-.planos .cards .card ul li:last-child {
-  margin-bottom: 5rem;
 }
 
 .planos .cards .card ul li i{
   color: var(--color-primary);
   font-size: 1.7rem;
-  padding-right: 1rem;
+  padding-right: .5rem;
 }
 
 .planos .cards .card #price {
@@ -431,11 +427,13 @@ img {
   background-color: var(--color-primary);
   padding: 1rem 2rem;
   border-radius: 1rem;
-  letter-spacing: 1px;
   cursor:default;
+  display: block;
+  width: max-content;
+  margin-top: 1.5rem;
 }
 
-.planos .cards .card a {
+.planos .cards .card .btn {
   display: block;
   margin-top: 3rem;
   padding: 1.5rem 0;
@@ -449,8 +447,18 @@ img {
   transition: all .3s ease-in-out;
 }
 
-.planos .cards .card a:hover {
+.planos .cards .card .btn:hover {
   background-color: var(--color-black);
+}
+
+.planos .cards .card .btn_saiba_mais {
+  margin: 0 auto;
+  display: block;
+  width: max-content;
+  margin-top: 1rem;
+  color: var(--color-primary-dark);
+  font-size: 1.8rem;
+  font-weight: 500;
 }
 
 /* 
@@ -689,17 +697,20 @@ img {
   display: none;
 }
 
-.shared .shared_header .new_create,
-.cofre .cofre_header .new_create {
-  position: relative;
+.new_create,
+.new_create {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 }
 
-.shared .shared_header .new_create button,
-.cofre .cofre_header .new_create button {
+.new_create button,
+.new_create button {
   border-radius: 50%;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 5rem;
+  height: 5rem;
   background-color: var(--color-primary);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
   color: #fff;
   font-size: 1.5rem;
