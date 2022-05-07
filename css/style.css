@@ -730,9 +730,10 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 95%;
-  max-width: 40rem;
+  max-width: 50rem;
   background-color: #fff;
   padding: 2rem;
+  z-index: 500;
   height: 50vh;
 }
 
@@ -740,6 +741,47 @@ img {
   font-size: 2.3rem;
   text-align: center;
   padding-bottom: 2rem;
+}
+
+.create_new .create_new_container .options {
+  display: block;
+  position: relative;
+}
+
+.create_new .create_new_container .options .btn_option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  border: .01rem solid rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+}
+
+.create_new .create_new_container .options .options_list {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 98%;
+  height: 0%;
+  background-color: #fff;
+  overflow: hidden;
+  transition: 200ms linear;
+}
+
+.create_new .create_new_container .options .options_list.active {
+  height: 200%;
+}
+
+.create_new .create_new_container .options .options_list .option {
+  display: block;
+  cursor: pointer;
+  border: .01rem solid rgba(0, 0, 0, 0.8);
+  padding: 1rem 2rem;
 }
 
 /* 
