@@ -705,7 +705,7 @@ img {
   z-index: 300;
 }
 
-.create_new button {
+.create_new .btn_create {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -720,7 +720,7 @@ img {
   transition: background-color 200ms linear;
 }
 
-.create_new button:hover {
+.create_new .btn_create:hover {
   background-color: var(--color-primary-dark);
 }
 
