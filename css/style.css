@@ -698,7 +698,11 @@ img {
 }
 
 .create_new {
-
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 300;
 }
 
 .create_new button {
@@ -718,6 +722,24 @@ img {
 
 .create_new button:hover {
   background-color: var(--color-primary-dark);
+}
+
+.create_new .create_new_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  max-width: 40rem;
+  background-color: #fff;
+  padding: 2rem;
+  height: 50vh;
+}
+
+.create_new .create_new_container .text_heading {
+  font-size: 2.3rem;
+  text-align: center;
+  padding-bottom: 2rem;
 }
 
 /* 
