@@ -5,6 +5,8 @@ const btnOptions = document.querySelector('.btn_option');
 const optionsList = document.querySelector('.options_list');
 const options = document.querySelectorAll('.item');
 const selectedOption = document.querySelector('.selected_option');
+const createPass = document.querySelector('.create_password')
+const createFolder = document.querySelector('.create_folder')
 
 btnOptions.addEventListener('click', () => {
     optionsList.classList.toggle('active');
@@ -16,12 +18,28 @@ options.forEach(option => {
         let textBtn = btnOptions.children[0];
         textBtn.textContent = textOption;
         optionsList.classList.remove('active');
-    })
-})
+        /* 
+        ----------- MOSTRAR CAMPOS DA OPÇÃO SELECIONADA ------------
+        */ 
+       if (option === optionsList.children[0]) {
+           createFolder.classList.add('active')
+           createPass.classList.remove('active')
+           formCreate.style.height = 'auto'
+           createFolder.style.height = createFolder.scrollHeight+'px'
+           createPass.style.height = '0px'
+       } else {
+           createPass.classList.add('active')
+           createFolder.classList.remove('active')
+           formCreate.style.height = 'auto'
+           createPass.style.height = createPass.scrollHeight+'px'
+           createFolder.style.height = '0px'
+       }
 
-/* 
----------- MOSTRAR JANELA MODAL DE NOVA CRIAÇÃO OU COMPARTILHAMENTO --------------
-*/
-const btnShowModal = document.querySelector('.btn_create');
-const modalCreate = document.querySelector('.create_new_modal');
+       console.log(createFolder.scrollHeight)
+    });
+});
+
+
+
+
 
