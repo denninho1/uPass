@@ -48,6 +48,7 @@ body {
   font-size: 1.6rem;
   overflow-x: hidden;
   transition: all .3s ease;
+  background-color: #fff;
 }
 
 body.active {
@@ -697,16 +698,6 @@ img {
   display: none;
 }
 
-.create_new {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 300;
-  display: flex;
-  justify-content: center;
-}
-
 .create_new .btn_create {
   position: fixed;
   bottom: 2rem;
@@ -726,42 +717,77 @@ img {
   background-color: var(--color-primary-dark);
 }
 
-.create_new .create_new_container {
-  width: 95%;
-  max-width: 50rem;
-  background-color: #fff;
-  padding: 2rem;
-  z-index: 500;
-  margin-top: 2rem;
-  border-radius: 1rem;
+/* 
+------------ JANELA MODAL CREATE PASS/FOLDER and Shared ----------
+*/
+.create_new .create_new_modal {
+  display: none;
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 200;
 }
 
-.create_new .create_new_container .text_heading {
+.create_new .forms_create {
+  position: relative;
+  width: 95%;
+  max-width: 50rem;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem 3rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  height: 250px;
+  animation: l-3d-bottom 300ms ease-in-out;
+  transition: 100ms ease-in-out;
+  font-size: 1.7rem;
+}
+
+.create_new .create_new_modal .forms_create .close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.create_new .create_new_modal .forms_create .input_box {
+  margin-bottom: 1rem;
+  display: block;
+  position: relative;
+}
+
+.create_new .create_new_modal.active {
+  display: block;
+}
+
+.create_new .create_new_modal .text_heading {
   font-size: 2.3rem;
   text-align: center;
   padding-bottom: 2rem;
 }
 
-.create_new .create_new_container .options {
-  display: block;
-  position: relative;
-}
-
-.create_new .create_new_container .options .btn_option {
+.create_new .create_new_modal .options .btn_option {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
+  margin-bottom: 3rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.create_new .create_new_modal .modal_input {
   width: 100%;
   padding: 1.5rem 2rem;
-  cursor: pointer;
-  font-size: 1.8rem;
+  border: .01rem solid rgba(0, 0, 0, 0.3);
+  font-size: 1.7rem;
   font-weight: 600;
-  border: .01rem solid rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
   background-color: #fff;
 }
 
-.create_new .create_new_container .options .options_list {
+.create_new .create_new_modal .options .options_list {
   position: absolute;
   top: 100%;
   width: 100%;
@@ -772,22 +798,100 @@ img {
   border-radius: 1rem;
   overflow: hidden;
   transition: 200ms linear;
+  z-index: 300;
 }
 
-.create_new .create_new_container .options .options_list.active {
+.create_new .create_new_modal .options .options_list.active {
   height: auto;
   opacity: 1;
 }
 
-.create_new .create_new_container .options .options_list .item {
+.create_new .create_new_modal .options .options_list .item {
   display: block;
   cursor: pointer;
   padding: 1rem 2rem;
   border-bottom: .01rem solid rgba(0, 0, 0, 0.5);
 }
 
-.create_new .create_new_container .options .options_list .item:last-child {
+.create_new .create_new_modal .options .options_list .item:last-child {
   border: none;
+}
+
+.create_new .create_new_modal .input_box .choose_platform::placeholder {
+  opacity: 0;
+}
+
+.create_new .create_new_modal .input_box .choose_platform:focus::placeholder {
+  opacity: 1;
+}
+
+.create_new .create_new_modal .input_box .label_choose {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  padding: 0 2rem;
+  cursor: pointer;
+}
+
+.create_new .create_new_modal .input_box .choose_platform:focus ~ .label_choose,
+.create_new .create_new_modal .input_box .choose_platform:valid ~ .label_choose  {
+  display: none;
+}
+
+.create_new label {
+  display: block;
+  font-size: 1.7rem;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-weight: 600;
+  color: #000;
+  width: max-content;
+}
+
+.create_new .create_new_modal .forms_create .btns {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+  justify-content: space-between;
+}
+
+.create_new .create_new_modal .forms_create .btns button {
+  width: 45%;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.create_new .create_new_modal .forms_create .btns .btnCreate {
+  background-color: var(--color-primary);
+}
+
+.create_new .create_new_modal .forms_create .btns .btn_cancel {
+  background-color: #ccc;
+  color: #000;
+} 
+
+.create_password, 
+.create_folder {
+  opacity: 0;
+  pointer-events: none;
+  height: 0px;
+  animation: l-3d-bottom 200ms ease-in-out;
+  transition: 300ms ease-in-out;
+}
+
+.create_folder.active,
+.create_password.active {
+  opacity: 1;
+  pointer-events:all;
 }
 
 /* 
