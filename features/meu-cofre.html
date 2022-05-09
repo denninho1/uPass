@@ -97,7 +97,7 @@
           <div class="forms_create" method="post" >
             <h2 class="text_heading" >O que você deseja criar ?</h2>
             <i class="fas fa-times close_modal close" title="fechar modal" ></i>
-            
+
             <div class="options input_box">
               <button class="btn_option modal_input" type="button">
                 <span class="option_selected" >Selecione uma opção</span>
@@ -115,11 +115,11 @@
                 </li>
               </ul>
             </div>
-
+            <!-------- CREATE PASSWORD -------->
             <form class="create_password">
               <div class="input_box">
-                <input type="text" name="choose_platform" id="choose_platform" class="choose_platform modal_input" placeholder="ou digite a plataforma" >
-                <label for="choose_platform">
+                <input type="text" name="choose_platform" id="choose_platform" class="choose_platform modal_input" placeholder="ou digite a plataforma" autocomplete="off" required >
+                <label for="choose_platform" class="label_choose">
                   <span class="option_selected" >Selecione uma plataforma*</span>
                   <i class="fa-solid fa-caret-down"></i>
                 </label>
@@ -127,25 +127,25 @@
               
               <div class="input_box">
                 <label for="platform_login">Login*</label>
-                <input type="text" name="platform_login" id="platform_login" class="platform_login modal_input" placeholder="Digite o usuário ou email" >
+                <input type="text" name="platform_login" id="platform_login" class="platform_login modal_input" placeholder="Digite o usuário ou email" required>
               </div>
   
               <div class="input_box">
                 <label for="platform_pass">Senha*</label>
-                <input type="password" name="platform_pass" id="platform_pass" class="platform_pass modal_input" placeholder="Digite a senha">
+                <input type="password" name="platform_pass" id="platform_pass" class="platform_pass modal_input" placeholder="Digite a senha" required>
               </div>
-              <div class="input_box btns">
+              <div class="btns">
                 <button class="btnCreate" type="submit" >Criar</button>
                 <button type="button" class="btn_cancel close_modal" >Cancelar</button>
               </div>
             </form>
-
+            <!-------- CREATE FOLDER -------->
             <form class="create_folder">
               <div class="input_box">
                 <label for="new_folder">Nome da pasta</label>
-                <input type="password" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta">
+                <input type="password" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta" required>
               </div>
-              <div class="input_box btns">
+              <div class="btns">
                 <button class="btnCreate" type="submit" >Criar</button>
                 <button type="button" class="btn_cancel close_modal" >Cancelar</button>
               </div>
