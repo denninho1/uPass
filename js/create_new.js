@@ -15,6 +15,8 @@ options.forEach(option => {
         let textOption = option.children[1].textContent;
         let textBtn = btnOptions.children[0];
         textBtn.textContent = textOption;
+        optionsList.classList.remove('active');
     })
 })
+
 
