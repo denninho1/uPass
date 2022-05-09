@@ -19,4 +19,9 @@ options.forEach(option => {
     })
 })
 
+/* 
+---------- MOSTRAR JANELA MODAL DE NOVA CRIAÇÃO OU COMPARTILHAMENTO --------------
+*/
+const btnShowModal = document.querySelector('.btn_create');
+const modalCreate = document.querySelector('.create_new_modal');
 
