@@ -1,3 +1,6 @@
+/* 
+----------- MOSTRAR OPÇÃO ESCOLHIDA NO BOTAO ------------
+*/
 const btnOptions = document.querySelector('.btn_option');
 const optionsList = document.querySelector('.options_list');
 const options = document.querySelectorAll('.item');
