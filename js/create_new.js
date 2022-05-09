@@ -7,6 +7,7 @@ const options = document.querySelectorAll('.item');
 const selectedOption = document.querySelector('.selected_option');
 const createPass = document.querySelector('.create_password')
 const createFolder = document.querySelector('.create_folder')
+const formCreate = document.querySelector('.forms_create')
 
 btnOptions.addEventListener('click', () => {
     optionsList.classList.toggle('active');
@@ -61,6 +62,9 @@ closeModal.forEach(close => {
         window.document.body.style.overflow = 'auto';
     })
 })
+
+
+
 
 
 
