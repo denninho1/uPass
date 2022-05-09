@@ -84,15 +84,20 @@
       </div>
     </header>
 
-    <!--------- BOTÃO CREATE NEW ITEM ------------>
-    <div class="new_create">
-      <button class="btn_create" title="Criar novo compartilhamento" >
-        <span><i class="fas fa-plus"></i></span>
-      </button>
+      <!--------- BOTÃO CREATE NEW ITEM ------------>
+      <div class="create_new">
+        <button class="btn_show_modal" title="Compartilhar senha" >
+          <span><i class="fas fa-plus"></i></span>
+        </button>
 
-      <div class="new_create_container">
+        <div class="create_new_modal">
+          <div class="forms_create" method="post" >
+            <h2 class="text_heading">O que deseja compartilhar?</h2>
+            <i class="fas fa-times close_modal close" title="fechar modal" ></i>
+
+          </div>
+        </div>
       </div>
-    </div>
 
       <section class="shared">
         <div class="container">
@@ -326,6 +331,8 @@
     <script src="../js/script.js"></script>
     <!--------- PAGE SCRIPT --------->
     <script src="../js/filters.js"></script>
+    <!------ CREATE NEW SCRIPT -------->
+    <script src="../js/create_new.js"></script>
     <!------------- LINK FONTAWESOME ICONS -------------->
     <script src="https://kit.fontawesome.com/156a0949b0.js" crossorigin="anonymous"></script>
   </body>
