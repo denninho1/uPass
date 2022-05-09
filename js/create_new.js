@@ -41,7 +41,7 @@ options.forEach(option => {
 /* 
 ---------- MOSTRAR E FECHAR JANELA MODAL DE NOVA CRIAÇÃO OU COMPARTILHAMENTO --------------
 */
-const btnShowModal = document.querySelector('.btn_create');
+const btnShowModal = document.querySelector('.btn_show_modal');
 const modalCreate = document.querySelector('.create_new_modal');
 const closeModal = document.querySelectorAll('.close_modal');
 
@@ -60,7 +60,7 @@ closeModal.forEach(close => {
         btnShowModal.style.display = 'block';
         formCreate.style.height = '250px'
         window.document.body.style.overflow = 'auto';
-    })
+    });
 })
 
 

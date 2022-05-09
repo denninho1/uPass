@@ -698,7 +698,7 @@ img {
   display: none;
 }
 
-.create_new .btn_create {
+.create_new .btn_show_modal {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
@@ -713,7 +713,7 @@ img {
   transition: background-color 200ms linear;
 }
 
-.create_new .btn_create:hover {
+.create_new .btn_show_modal:hover {
   background-color: var(--color-primary-dark);
 }
 
