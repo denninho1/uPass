@@ -34,10 +34,33 @@ options.forEach(option => {
            createPass.style.height = createPass.scrollHeight+'px'
            createFolder.style.height = '0px'
        }
-
-       console.log(createFolder.scrollHeight)
     });
 });
+
+/* 
+---------- MOSTRAR E FECHAR JANELA MODAL DE NOVA CRIAÇÃO OU COMPARTILHAMENTO --------------
+*/
+const btnShowModal = document.querySelector('.btn_create');
+const modalCreate = document.querySelector('.create_new_modal');
+const closeModal = document.querySelectorAll('.close_modal');
+
+btnShowModal.addEventListener('click', () => {
+    modalCreate.classList.add('active')
+    btnShowModal.style.display = 'none';
+    window.document.body.style.overflow = 'hidden';
+});
+
+closeModal.forEach(close => {
+    close.addEventListener('click', () => {
+        modalCreate.classList.remove('active')
+        optionsList.classList.remove('active');
+        createFolder.classList.remove('active')
+        createPass.classList.remove('active')
+        btnShowModal.style.display = 'block';
+        formCreate.style.height = '250px'
+        window.document.body.style.overflow = 'auto';
+    })
+})
 
 
 
