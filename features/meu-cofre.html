@@ -93,24 +93,63 @@
           <span><i class="fas fa-plus"></i></span>
         </button>
 
-        <div class="create_new_container">
-          <h2 class="text_heading" >O que você deseja criar ?</h2>
+        <div class="create_new_modal">
+          <div class="forms_create" method="post" >
+            <h2 class="text_heading" >O que você deseja criar ?</h2>
+            <i class="fas fa-times close_modal close" title="fechar modal" ></i>
+            
+            <div class="options input_box">
+              <button class="btn_option modal_input" type="button">
+                <span class="option_selected" >Selecione uma opção</span>
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
 
-          <div class="options">
-            <button class="btn_option">
-              <span class="option_selected" >Selecione uma opção</span>
-              <i class="fa-solid fa-caret-down"></i>
-            </button>
-            <ul class="options_list">
-              <li class="item">
-                <i class="fa-solid fa-folder"></i>
-                <span class="option">Nova pasta</span>
-              </li>
-              <li class="item">
-                <i class="fa-solid fa-lock"></i>
-                <span class="option">Nova senha</span>
-              </li>
-            </ul>
+              <ul class="options_list">
+                <li class="item folder" data-select="folder">
+                  <i class="fa-solid fa-folder"></i>
+                  <span class="option ">Nova pasta</span>
+                </li>
+                <li class="item" data-select="pass">
+                  <i class="fa-solid fa-lock"></i>
+                  <span class="option ">Nova senha</span>
+                </li>
+              </ul>
+            </div>
+
+            <form class="create_password">
+              <div class="input_box">
+                <input type="text" name="choose_platform" id="choose_platform" class="choose_platform modal_input" placeholder="ou digite a plataforma" >
+                <label for="choose_platform">
+                  <span class="option_selected" >Selecione uma plataforma*</span>
+                  <i class="fa-solid fa-caret-down"></i>
+                </label>
+              </div>
+              
+              <div class="input_box">
+                <label for="platform_login">Login*</label>
+                <input type="text" name="platform_login" id="platform_login" class="platform_login modal_input" placeholder="Digite o usuário ou email" >
+              </div>
+  
+              <div class="input_box">
+                <label for="platform_pass">Senha*</label>
+                <input type="password" name="platform_pass" id="platform_pass" class="platform_pass modal_input" placeholder="Digite a senha">
+              </div>
+              <div class="input_box btns">
+                <button class="btnCreate" type="submit" >Criar</button>
+                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
+              </div>
+            </form>
+
+            <form class="create_folder">
+              <div class="input_box">
+                <label for="new_folder">Nome da pasta</label>
+                <input type="password" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta">
+              </div>
+              <div class="input_box btns">
+                <button class="btnCreate" type="submit" >Criar</button>
+                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
