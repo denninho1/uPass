@@ -1,4 +1,11 @@
 /* 
+------------ LOAD PAGE ------------
+*/
+window.addEventListener('load', () => {
+
+});
+
+/* 
 ----------- MOSTRAR OPÇÃO ESCOLHIDA NO BOTAO ------------
 */
 const btnOptions = document.querySelector('.btn_option');
@@ -83,7 +90,7 @@ function cardsValidate() {
     }
     
 }
-cardsValidate()
+
 
 
 
