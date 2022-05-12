@@ -63,7 +63,27 @@ closeModal.forEach(close => {
     });
 })
 
+/* 
+TESTE
+*/
 
+const cards = document.querySelector('.cards');
+const cardsContainer = document.querySelector('.cards_container')
+
+function cardsValidate() {
+    let cardLength = cards.children.length
+    console.log(cardLength)
+    
+    if (cardLength === 0) {
+        cards.style.display = 'none';
+        const novo = '<div class="no_items"><h1 class="heading">Cofre vazio</h1><h3 class="subtitle">Por favor, crie uma nova senha ou pasta!</h3><button class="btn btn_show_modal">Nova criação</button></div>';
+        cardsContainer.innerHTML = novo;
+    } else if (cardLength >= 1) {
+        console.log('Tem items')
+    }
+    
+}
+cardsValidate()
 
 
 
