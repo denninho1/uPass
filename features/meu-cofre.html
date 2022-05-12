@@ -76,7 +76,7 @@
 
             <div class="user_login">
               <div class="img_profile">
-                <img id="img_user" src="./images/profile.jpg" alt="imagem do usuário">
+                <img id="img_user" src="../images/profile.jpg" alt="imagem do usuário">
               </div>
               <span id="user_name">Isabelle203</span>
               <a href="#"></a>
@@ -92,7 +92,7 @@
         </button>
 
         <div class="create_new_modal">
-          <div class="forms_create" method="post" >
+          <div class="forms_create">
             <h2 class="text_heading" >O que você deseja criar ?</h2>
             <i class="fas fa-times close_modal close" title="fechar modal" ></i>
 
@@ -144,7 +144,7 @@
                 <input type="text" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta" required>
               </div>
               <div class="btns">
-                <button class="btnCreate" type="submit" >Criar</button>
+                <button class="btnCreate btn_create_folder" type="submit" >Criar</button>
                 <button type="button" class="btn_cancel close_modal" >Cancelar</button>
               </div>
             </form>
@@ -184,78 +184,8 @@
             </form>
           </nav>
          <!------------- CARDS -------------->
-          <div class="cards">
-            <div class="card card_streaming">
-              <div class="imgs_wrapper">
-                <img src="../images/netflix.png" alt="">
-                <img src="../images/prime-video.png" alt="">
-              </div>
-              <div class="text">
-                <h2 id="name_folder">Streaming</h2>
-                <span id="total_pass">5 senhas</span>
-              </div>
-              <a href="#"></a>
-              <div class="config_card">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-
-            <div class="card card_redessociais">
-              <div class="imgs_wrapper">
-                <img src="../images/facebook.png" alt="">
-              </div>
-              <div class="text">
-                <h2 id="name_folder">Redes sociais</h2>
-                <span id="total_pass">1 senha</span>
-              </div>
-              <a href="#"></a>
-                            <div class="config_card">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-
-            <div class="card card_wifi">
-              <div class="imgs_wrapper">
-                <img src="../images/wi-fi.png" alt="">
-              </div>
-              <div class="text">
-                <h2 id="name_folder">Wi-fi</h2>
-                <span id="total_pass">12 senhas</span>
-              </div>
-              <a href="#"></a>
-                            <div class="config_card">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-
-            <div class="card card_site">
-              <div class="imgs_wrapper">
-                <img src="../images/dropbox.png" alt="">
-                <img src="../images/amazon.png" alt="">
-              </div>
-              <div class="text">
-                <h2 id="name_folder">Sites</h2>
-                <span id="total_pass">3 senhas</span>
-              </div>
-              <a href="#"></a>
-                            <div class="config_card">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
-
-            <div class="card cartaoes">
-              <div class="imgs_wrapper">
-                <img src="../images/cartao-de-credito.png" alt="">
-              </div>
-              <div class="text">
-                <h2 id="name_folder">Cartões de credito</h2>
-                <span id="total_pass">1 senha</span>
-              </div>
-              <a href="#"></a>
-                            <div class="config_card">
-                <i class="fas fa-ellipsis-h"></i>
-              </div>
-            </div>
+          <div class="cards_container">
+             <ul class="cards"></ul>
           </div>
         </div>
       </section>
@@ -264,6 +194,20 @@
         <a href="#" title="Desenvolvido pela equipe uPass">&copy; Desenvolvido por uPass</a>
       </footer>
     </main>
+
+    <!--<li class="card">
+      <div class="imgs_wrapper">
+        <img src="../images/netflix.png" alt="">
+      </div>
+      <div class="text">
+        <h2 id="name_folder">Redirecionamentos</h2>
+        <span id="total_pass">5 senhas</span>
+      </div>
+      <div class="config_card">
+        <i class="fas fa-ellipsis-h"></i>
+      </div>
+      <a href="#"></a>
+    </li> -->
 
     <!--------- MAIN SCRIPT --------->
     <script src="../js/script.js"></script>
