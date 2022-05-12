@@ -65,6 +65,8 @@ function showModal() {
 
 closeModal.forEach(close => {
     close.addEventListener('click', () => {
+        let textBtn = btnOptions.children[0];
+        textBtn.textContent = 'Selecione uma opção';
         modalCreate.classList.remove('active')
         optionsList.classList.remove('active');
         createFolder.classList.remove('active')
