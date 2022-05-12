@@ -52,11 +52,16 @@ const btnShowModal = document.querySelector('.btn_show_modal');
 const modalCreate = document.querySelector('.create_new_modal');
 const closeModal = document.querySelectorAll('.close_modal');
 
+
 btnShowModal.addEventListener('click', () => {
+    showModal();
+});
+
+function showModal() {
     modalCreate.classList.add('active')
     btnShowModal.style.display = 'none';
     window.document.body.style.overflow = 'hidden';
-});
+}
 
 closeModal.forEach(close => {
     close.addEventListener('click', () => {
@@ -71,24 +76,25 @@ closeModal.forEach(close => {
 })
 
 /* 
-TESTE
+----------------- VALIDANDO SE HÁ SENHAS SALVAS --------------------
 */
-
 const cards = document.querySelector('.cards');
 const cardsContainer = document.querySelector('.cards_container')
 
 function cardsValidate() {
     let cardLength = cards.children.length
-    console.log(cardLength)
     
     if (cardLength === 0) {
-        cards.style.display = 'none';
-        const novo = '<div class="no_items"><h1 class="heading">Cofre vazio</h1><h3 class="subtitle">Por favor, crie uma nova senha ou pasta!</h3><button class="btn btn_show_modal">Nova criação</button></div>';
+        const novo = '<div class="no_items"><h1 class="heading">Cofre vazio</h1><h3 class="subtitle">Por favor, crie uma nova senha ou pasta!</h3><button class="btn show_modal">Nova criação</button></div>';
         cardsContainer.innerHTML = novo;
+        const btnShowModal_2 = document.querySelector('.show_modal');
+        btnShowModal_2.addEventListener('click', () => {
+            showModal();
+        });
+        
     } else if (cardLength >= 1) {
         console.log('Tem items')
     }
-    
 }
 
 
