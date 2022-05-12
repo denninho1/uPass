@@ -2,7 +2,7 @@
 ------------ LOAD PAGE ------------
 */
 window.addEventListener('load', () => {
-
+    cardsValidate()
 });
 
 /* 
