@@ -2,7 +2,7 @@
 ------------ LOAD PAGE ------------
 */
 window.addEventListener("load", () => {
-   /* cardsValidate() */
+   
 });
 
 
@@ -15,52 +15,63 @@ const closeModal = document.querySelectorAll(".close_modal");
 const createPassForm = document.querySelector(".create_password");
 const createFolderForm = document.querySelector(".create_folder");
 
-btnShowModal.addEventListener("click", () => {
-  showModal();
-});
-
 function showFormPass() {
-    createPassForm.classList.add('active');
-    createFolderForm.classList.remove('active');
+  createPassForm.classList.add('active');
+  createFolderForm.classList.remove('active');
+  createPassForm.style.height = createPassForm.scrollHeight + "px";
+  createFolderForm.style.height = "0px";
+  modalCreate.style.height = "auto";
 };
 
 function showFormFolder() {
   createFolderForm.classList.add('active');
   createPassForm.classList.remove('active');
+  createFolderForm.style.height = createFolderForm.scrollHeight + "px";
+  createPassForm.style.height = "0px";
+  modalCreate.style.height = "auto";
 };
 
 function showModal() {
-  modalCreate.classList.add("active");
-  btnShowModal.style.display = "none";
-  window.document.body.style.overflow = "hidden";
+  if (modalCreate.classList.contains('active')) {
+    modalCreate.classList.remove('active');
+    btnShowModal.style.display = 'block';
+    optionsList.classList.remove('active');
+    modalCreate.style.height = '250px';
+    window.document.body.style.overflow = 'auto';
+    let textBtn = btnOptions.children[0];
+    textBtn.textContent = 'Selecione uma opção';
+    createFolderForm.classList.remove('active')
+    createPassForm.classList.remove('active')
+  } else {
+    modalCreate.classList.add('active');
+    btnShowModal.style.display = 'none';
+    window.document.body.style.overflow = 'hidden';
+  }
 }
 
 closeModal.forEach(close => {
-  close.addEventListener("click", () => {
-    let textBtn = btnOptions.children[0];
-    textBtn.textContent = "Selecione uma opção";
-    optionsList.classList.remove("active");
-    btnShowModal.style.display = "block";
-    modalCreate.style.height = "250px";
-    modalCreate.classList.remove('active')
-    window.document.body.style.overflow = "auto";
-    showForms();
+  close.addEventListener('click', () => {
+    showModal();
   });
+});
+
+btnShowModal.addEventListener('click', () => {
+  showModal();
 });
 
 /* 
 ----------- MOSTRAR OPÇÃO ESCOLHIDA NO BOTAO ------------
 */
-const btnOptions = document.querySelector(".btn_options");
-const optionsList = document.querySelector(".options_list");
-const options = document.querySelectorAll(".option");
+const btnOptions = document.querySelector('.btn_options');
+const optionsList = document.querySelector('.options_list');
+const options = document.querySelectorAll('.option');
 
-btnOptions.addEventListener("click", () => {
+btnOptions.addEventListener('click', () => {
   optionsList.classList.toggle("active");
 });
 
 options.forEach(option => {
-  option.addEventListener("click", () => {    
+  option.addEventListener("click", () => {
     let textOption = option.children[1].textContent;
     let textBtn = btnOptions.children[0];
     textBtn.textContent = textOption;
@@ -68,15 +79,9 @@ options.forEach(option => {
 
     //----------- MOSTRAR CAMPOS DA OPÇÃO SELECIONADA ------------
     if (option.id === 'folder') {
-      showFormFolder()
-      modalCreate.style.height = "auto";
-      createFolderForm.style.height = createFolderForm.scrollHeight + "px";
-      createPassForm.style.height = "0px";
+      showFormFolder();
     } else {
       showFormPass();
-      modalCreate.style.height = "auto";
-      createPassForm.style.height = createPassForm.scrollHeight + "px";
-      createFolderForm.style.height = "0px";
     }
   }); 
 });
@@ -86,21 +91,38 @@ options.forEach(option => {
 */
 const cards = document.querySelector('.cards');
 const cardsContainer = document.querySelector('.cards_container');
-/* 
-function cardsValidate() {
+
+/* unction cardsValidate() {
   let cardLength = cards.children.length;
+
+  const noItemsContainer = document.createElement('div');
+  noItemsContainer.classList.add('no_items');
+
+  const noItemsTitle = document.createElement('h1');
+  noItemsTitle.classList.add('no_items_title');
+  noItemsTitle.innerHTML = 'Cofre vazio';
+
+  const noItemsSubtitle = document.createElement('h3');
+  noItemsSubtitle.classList.add('no_items_subtitle');
+  noItemsSubtitle.innerHTML = 'Por favor, crie uma nova senha ou pasta!';
+
+  const noItemsButton = document.createElement('button');
+  noItemsButton.classList.add('no_items_button');
+  noItemsButton.classList.add('show_modal');
+  noItemsButton.innerText = 'Nova criação';
+
+  noItemsContainer.appendChild(noItemsTitle);
+  noItemsContainer.appendChild(noItemsSubtitle);
+  noItemsContainer.appendChild(noItemsButton);
+
   if (cardLength === 0) {
-    let noItems = '';
-    noItems = '<div class="no_items"><h1 class="heading">Cofre vazio</h1><h3 class="subtitle">Por favor, crie uma nova senha ou pasta!</h3><button class="btn show_modal">Nova criação</button></div>';
-    cardsContainer.innerHTML += noItems;
-    const btnShowModal_2 = document.querySelector(".show_modal");
-    btnShowModal_2.addEventListener("click", () => {
+    cardsContainer.appendChild(noItemsContainer);
+    const btnShowModal_2 = document.querySelector('.no_items_button');
+    btnShowModal_2.addEventListener('click', () => {
       showModal();
     });
-  } else if (cardLength === 1) {
-    var elemento = document.querySelector(".no_items");
-    elemento.parentNode.removeChild(elemento);
-    createFolder();
+  } else if (cardLength > 0) {
+    cardsContainer.removeChild(noItemsContainer);
   }
 } */
 
@@ -134,10 +156,10 @@ function createFolder() {
   let totalPass = '0'
   folderTotalPass.innerHTML = `${totalPass} senhas`
 
-  // Elemento a para redirecionamento da senhas
-  const folderLink = document.createElement('a')
-  folderLink.href = '#'
-  folderLink.classList.add('folder_link')
+  // Elemento para o redirecionamento da senhas
+  const folderLink = document.createElement('a');
+  folderLink.href = '#';
+  folderLink.classList.add('folder_link');
 
   folderContainer.appendChild(folderImg)
   folderContainer.appendChild(folderName)
@@ -146,28 +168,27 @@ function createFolder() {
 
   if (NewFolderName === "") {
     alert("Preencha o campo");
-  } else if (NewFolderName.length < 2) {
+  } else if (NewFolderName.length < 3) {
     alert('Minimo 2 caracteres')
   } else {
-    if (cardsContainer.length === 2) {
-      alert('Você já o atingiu o limite de pastas (3)')
+    if (cards.children.length >= 2) {
+      alert('Você já o atingiu o limite de pastas (2)')
     } else {
-      cardsContainer.appendChild(folderContainer);
+      cards.appendChild(folderContainer);
+      inputNameFolder.value = "";
     }
   }
 }
 
-newFolderBtn.addEventListener('click', () => {
+newFolderBtn.addEventListener('click', (e) => {
     createFolder();
 });
   
-inputNameFolder.addEventListener('input', () => {
-    if (inputNameFolder.value.length >= 15 ) {
-        inputNameFolder.setAttribute('maxLength', '15')
+inputNameFolder.addEventListener('keypress', () => {
+    if (inputNameFolder.value.length >= 20 ) {
+        inputNameFolder.setAttribute('maxLength', '20')
     }
 });
-
-
 
 
 
