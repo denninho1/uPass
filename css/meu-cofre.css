@@ -8,9 +8,10 @@
 
 .cards_container {
   padding: 2rem 0;
+
 }
 
-.cofre .cards {
+.cofre .cards_container .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
 }
@@ -25,34 +26,71 @@
   background-color: #ccc;
 }
 
-.cofre .card .imgs_wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 1rem;
-}
-
-.cofre .card .imgs_wrapper img {
-  width: 5rem;
+.cofre .card .img_folder {
+  margin: 0 auto 1rem;
+  width: auto;
   height: 5rem;
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
-.cofre .card h2 {
+.cofre .card .folder_name {
   font-size: 1.7rem;
   font-weight: 600;
 }
 
-.cofre .card span {
+.cofre .card .total_pass {
   font-size: 1.5rem;
   color: #777;
 }
 
-.cofre .card a {
+.cofre .card .folder_link {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  cursor: pointer;
+}
+
+.cofre .more_folder {
+  background-color: var(--color-primary) !important;
+}
+
+.cofre .more_folder:hover {
+  background-color: var(--color-primary-dark) !important;
+}
+
+.cofre .more_folder button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cofre .more_folder button span {
+  display: block;
+}
+
+.cofre .more_folder button .more_folder_title {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.cofre .more_folder button .more_folder_button {
+  background-color: var(--color-white);
+  padding: .5rem 1rem;
+  color: var(--color-black-light);
+  font-size: 1.8rem;
+  font-weight: 600;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 1rem;
 }
 
 .config_card {
