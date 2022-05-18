@@ -2,7 +2,7 @@
 ------------ LOAD PAGE ------------
 */
 window.addEventListener("load", () => {
-   
+  moreFolder();
 });
 
 
@@ -92,39 +92,45 @@ options.forEach(option => {
 const cards = document.querySelector('.cards');
 const cardsContainer = document.querySelector('.cards_container');
 
-/* unction cardsValidate() {
+function moreFolder() {
   let cardLength = cards.children.length;
 
-  const noItemsContainer = document.createElement('div');
-  noItemsContainer.classList.add('no_items');
+  const moreFolderContainer = document.createElement('div');
+  moreFolderContainer.classList.add('more_folder');
+  moreFolderContainer.classList.add('card');
 
-  const noItemsTitle = document.createElement('h1');
-  noItemsTitle.classList.add('no_items_title');
-  noItemsTitle.innerHTML = 'Cofre vazio';
+  const moreFolderTitle = document.createElement('span');
+  moreFolderTitle.classList.add('more_folder_title');
 
-  const noItemsSubtitle = document.createElement('h3');
-  noItemsSubtitle.classList.add('no_items_subtitle');
-  noItemsSubtitle.innerHTML = 'Por favor, crie uma nova senha ou pasta!';
+  const moreFolderButton = document.createElement('span');
+  moreFolderButton.classList.add('more_folder_button');
+  moreFolderButton.innerText = 'Clique aqui';
 
-  const noItemsButton = document.createElement('button');
-  noItemsButton.classList.add('no_items_button');
-  noItemsButton.classList.add('show_modal');
-  noItemsButton.innerText = 'Nova criação';
+  const moreFolderShowModalButton = document.createElement('button');
+  moreFolderShowModalButton.classList.add('show_modal');
 
-  noItemsContainer.appendChild(noItemsTitle);
-  noItemsContainer.appendChild(noItemsSubtitle);
-  noItemsContainer.appendChild(noItemsButton);
+  moreFolderShowModalButton.appendChild(moreFolderTitle);
+  moreFolderShowModalButton.appendChild(moreFolderButton);
+  moreFolderContainer.appendChild(moreFolderShowModalButton);
 
-  if (cardLength === 0) {
-    cardsContainer.appendChild(noItemsContainer);
-    const btnShowModal_2 = document.querySelector('.no_items_button');
-    btnShowModal_2.addEventListener('click', () => {
-      showModal();
-    });
-  } else if (cardLength > 0) {
-    cardsContainer.removeChild(noItemsContainer);
+  if (cardLength === 1) {
+    cards.appendChild(moreFolderContainer);
+    moreFolderTitle.innerText = `Você ainda pode criar 3 pastas`;
+  } else if (cardLength === 2) {
+    cards.appendChild(moreFolderContainer);
+    moreFolderTitle.innerText = `Você ainda pode criar 2 pastas`;
+  } else if (cardLength === 3) {
+    cards.appendChild(moreFolderContainer);
+    moreFolderTitle.innerText = `Você ainda pode criar 1 pasta`
+  } else {
+    cards.removeChild(moreFolderContainer)
   }
-} */
+
+  moreFolderShowModalButton.addEventListener('click', () => {
+    showModal();
+  });
+
+}
 
 /* 
 ------------ CREATE NEW FOLDER ---------
@@ -171,11 +177,12 @@ function createFolder() {
   } else if (NewFolderName.length < 3) {
     alert('Minimo 2 caracteres')
   } else {
-    if (cards.children.length >= 2) {
-      alert('Você já o atingiu o limite de pastas (2)')
+    if (cards.children.length >= 4) {
+      alert('Você já o atingiu o limite de pastas (4)')
     } else {
       cards.appendChild(folderContainer);
       inputNameFolder.value = "";
+      moreFolder()
     }
   }
 }
