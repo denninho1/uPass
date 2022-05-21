@@ -15,6 +15,7 @@ const closeModal = document.querySelectorAll(".close_modal");
 const createPassForm = document.querySelector(".create_password");
 const createFolderForm = document.querySelector(".create_folder");
 
+// Função para abrir forms para salvar uma senha
 function showFormPass() {
   createPassForm.classList.add('active');
   createFolderForm.classList.remove('active');
@@ -23,6 +24,7 @@ function showFormPass() {
   modalCreate.style.height = "auto";
 };
 
+// Função para abrir forms de criação de pasta
 function showFormFolder() {
   createFolderForm.classList.add('active');
   createPassForm.classList.remove('active');
@@ -31,6 +33,7 @@ function showFormFolder() {
   modalCreate.style.height = "auto";
 };
 
+// Função para abrir modal ou fechar modal
 function showModal() {
   if (modalCreate.classList.contains('active')) {
     modalCreate.classList.remove('active');
@@ -49,12 +52,14 @@ function showModal() {
   }
 }
 
+// Evento para fechar modal
 closeModal.forEach(close => {
   close.addEventListener('click', () => {
     showModal();
   });
 });
 
+// Evento para abrir modal
 btnShowModal.addEventListener('click', () => {
   showModal();
 });
@@ -66,18 +71,21 @@ const btnOptions = document.querySelector('.btn_options');
 const optionsList = document.querySelector('.options_list');
 const options = document.querySelectorAll('.option');
 
+// Evento para mostrar opções do modal create
 btnOptions.addEventListener('click', () => {
   optionsList.classList.toggle("active");
 });
 
+
 options.forEach(option => {
+  // Ao escolher uma opção, aparecer no botão a opção escolhida
   option.addEventListener("click", () => {
     let textOption = option.children[1].textContent;
     let textBtn = btnOptions.children[0];
     textBtn.textContent = textOption;
     optionsList.classList.remove("active");
 
-    //----------- MOSTRAR CAMPOS DA OPÇÃO SELECIONADA ------------
+    // Abrir o form da opção escolhida
     if (option.id === 'folder') {
       showFormFolder();
     } else {
@@ -92,8 +100,11 @@ options.forEach(option => {
 const cards = document.querySelector('.cards');
 const cardsContainer = document.querySelector('.cards_container');
 
+// Função para criar um novo card e inserir somente quando o limite de pasta não estiver ultrapassado
 function moreFolder() {
   let cardLength = cards.children.length;
+
+  console.log(cardLength)
 
   const moreFolderContainer = document.createElement('div');
   moreFolderContainer.classList.add('more_folder');
@@ -124,6 +135,7 @@ function moreFolder() {
     moreFolderTitle.innerText = `Você ainda pode criar 1 pasta`
   } else {
     cards.removeChild(moreFolderContainer)
+    moreFolderTitle.innerText = `Você ainda pode criar 0 pasta`
   }
 
   moreFolderShowModalButton.addEventListener('click', () => {
@@ -138,6 +150,7 @@ function moreFolder() {
 const inputNameFolder = document.querySelector(".new_folder");
 const newFolderBtn = document.querySelector(".btn_create_folder");
 
+// Função para criar um nova pasta
 function createFolder() {
   // Nome digitado no input para criar pasta
   let NewFolderName = inputNameFolder.value;
@@ -187,10 +200,12 @@ function createFolder() {
   }
 }
 
+// Evento para o botão de criar uma nova pasta
 newFolderBtn.addEventListener('click', (e) => {
     createFolder();
 });
   
+// Validando o tamanho de caracteres digitado para o nome da pasta
 inputNameFolder.addEventListener('keypress', () => {
     if (inputNameFolder.value.length >= 20 ) {
         inputNameFolder.setAttribute('maxLength', '20')
@@ -199,9 +214,7 @@ inputNameFolder.addEventListener('keypress', () => {
 
 
 
-/* 
--------- FORMS PREVENT DEFAULT --------
-*/
+// Prevent default nos forms
 createFolderForm.addEventListener('submit', (e) => {
   e.preventDefault();
 });
