@@ -110,7 +110,14 @@
 
 
 
-@media (max-width: 580px) {
-
+@media (max-width: 425px) {
+    .shared_items .shared_item .shared_info .who_shared_container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .shared_items .shared_item .shared_info .who_shared_container .icon_share {
+        margin: .5rem 0;
+        transform: rotate(90deg);
+    }
 }
 
