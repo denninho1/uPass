@@ -8,9 +8,7 @@ const filterItem = document.querySelectorAll('#filter_item');
 const yourShared = document.querySelector('#your_shared');
 const otherShared = document.querySelector('#other_shared');
 
-filterBtn.addEventListener('click', () => {
-    filterList.classList.toggle('active');
-
+function filterSections() {
     filterItem.forEach(item => {
         item.addEventListener('click', () => {
             let itemsName = item.textContent;
@@ -32,4 +30,11 @@ filterBtn.addEventListener('click', () => {
         });
     });
 
+}
+
+
+filterBtn.addEventListener('click', () => {
+    filterList.classList.toggle('active');
+
+    filterSections();
 });

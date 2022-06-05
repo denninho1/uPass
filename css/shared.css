@@ -6,6 +6,42 @@
     display: block;
 }
 
+.form_search {
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    border: .01rem solid rgba(0, 0, 0, 0.2);
+    margin: 0 2rem;
+  }
+  
+  .form_search #input_search {
+    background-color: transparent;
+    color: var(--color-black);
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-left: 1.5rem;
+    width: 100%;
+    height: 100%;
+    text-transform: lowercase;
+  }
+  
+  .form_search #input_search::placeholder {
+    color: var(--color-black-light);
+    opacity: .9;
+  }
+  
+  .form_search #btn_search {
+    font-size: 2rem;
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--color-black-light);
+    margin-left: 1.5rem;
+  }
+
 .your_shares, .other_shares{
     margin-bottom: 3rem;
 }

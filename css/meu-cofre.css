@@ -61,7 +61,7 @@
   background-color: var(--color-primary-dark) !important;
 }
 
-.cofre .more_folder button {
+.cofre .more_folder .show_modal {
   position: absolute;
   top: 0;
   left: 0;
@@ -71,18 +71,18 @@
   background-color: transparent;
 }
 
-.cofre .more_folder button span {
+.cofre .more_folder .show_modal span {
   display: block;
 }
 
-.cofre .more_folder button .more_folder_title {
+.cofre .more_folder .show_modal .more_folder_title {
   color: #fff;
   font-size: 2rem;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.cofre .more_folder button .more_folder_button {
+.cofre .more_folder .show_modal .more_folder_button {
   background-color: var(--color-white);
   padding: .5rem 1rem;
   color: var(--color-black-light);

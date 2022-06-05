@@ -42,17 +42,10 @@ toggleLogin_Register.forEach(btn => {
 ------- VALIDAÇÔES LOGIN -------
 */
 const formLogin = document.querySelector('.form_login'),
-      formRegister = document.querySelector('.form_register'),
       loginInputUser_Email = document.querySelector('#login_user_email'),
       loginInputPass = document.querySelector('#login_password'),
-      registerInputName = document.querySelector('#register_name'),
-      registerInputEmail = document.querySelector('#register_email'),
-      registerInputPass = document.querySelector('#register_password'),
-      registerInputConfirmPass = document.querySelector('#register_confirm_password'),
       btnFormLogin = document.querySelector('#login_btn'),
-      btnFormRegister = document.querySelector('#register_btn'),
-      loginTextError = document.querySelector('.login_error'),
-      registerTextError = document.querySelector('.register_error');
+      loginTextError = document.querySelector('.login_error');
 
 function validateInputsLogin() {
     let userValue = loginInputUser_Email.value;
@@ -82,6 +75,14 @@ function validateInputsLogin() {
 /* 
 ------- VALIDAÇÔES REGISTER -------
 */
+const registerInputName = document.querySelector('#register_name'),
+      registerInputEmail = document.querySelector('#register_email'),
+      registerInputPass = document.querySelector('#register_password'),
+      registerInputConfirmPass = document.querySelector('#register_confirm_password'),
+      formRegister = document.querySelector('.form_register'),
+      btnFormRegister = document.querySelector('#register_btn'),
+      registerTextError = document.querySelector('.register_error');
+
 
 function validateInputsRegister () {
     let registerNameValue = registerInputName.value;
@@ -99,6 +100,22 @@ function validateInputsRegister () {
         registerInputEmail.classList.add('invalid');
         registerInputPass.classList.add('invalid');
         registerInputConfirmPass.classList.add('invalid');
+    } else if (registerNameValue === '') {
+        registerTextError.textContent = "Preencha o nome corretamente";
+        registerInputName.classList.add('invalid');
+    }  else if (registerEmailValue === '') {
+        registerTextError.textContent = "Preencha o email corretamente";
+        registerInputEmail.classList.add('invalid');
+    }  else if (registerPassValue === '' || registerPassConfirmValue === '' || registerPassValue !== registerPassConfirmValue) {
+        registerTextError.textContent = "Preencha as senhas corretamente";
+        registerInputConfirmPass.classList.add('invalid');
+        registerInputPass.classList.add('invalid');
+    } else {
+        registerInputName.classList.remove('invalid');
+        registerInputEmail.classList.remove('invalid');
+        registerInputPass.classList.remove('invalid');
+        registerInputConfirmPass.classList.remove('invalid');
+        loginTextError.innerText = "";
     }
 }
 

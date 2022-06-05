@@ -14,7 +14,6 @@
   <body>
     <!------------- MAIN -------------->
     <main class="main">
-
       <!------------- HEADER -------------->
       <header class="header">
         <div class="container">
@@ -84,105 +83,11 @@
           </div>
         </div>
       </header>
-
-      <!--------- BOTÃO CREATE NEW ITEM ------------>
-      <div class="create_new">
-        <button class="btn_show_modal" title="Criar nova senha ou pasta" >
-          <span><i class="fas fa-plus"></i></span>
-        </button>
-
-        <div class="create_new_modal">
-          <div class="forms_create">
-            <h2 class="text_heading" >O que você deseja criar ?</h2>
-            <i class="fas fa-times close_modal close" title="fechar modal" ></i>
-
-            <div class="options input_box">
-              <button class="btn_option modal_input" type="button">
-                <span class="option_selected" >Selecione uma opção</span>
-                <i class="fa-solid fa-caret-down"></i>
-              </button>
-
-              <ul class="options_list">
-                <li class="item folder" data-select="folder">
-                  <i class="fa-solid fa-folder"></i>
-                  <span class="option ">Nova pasta</span>
-                </li>
-                <li class="item" data-select="pass">
-                  <i class="fa-solid fa-lock"></i>
-                  <span class="option ">Nova senha</span>
-                </li>
-              </ul>
-            </div>
-            <!-------- CREATE PASSWORD -------->
-            <form class="create_password">
-              <div class="input_box">
-                <input type="text" name="choose_platform" id="choose_platform" class="choose_platform modal_input" placeholder="ou digite a plataforma" autocomplete="off" required >
-                <label for="choose_platform" class="label_choose">
-                  <span class="option_selected" >Selecione uma plataforma*</span>
-                  <i class="fa-solid fa-caret-down"></i>
-                </label>
-              </div>
-              
-              <div class="input_box">
-                <label for="platform_login">Login*</label>
-                <input type="text" name="platform_login" id="platform_login" class="platform_login modal_input" placeholder="Digite o usuário ou email" required>
-              </div>
-  
-              <div class="input_box">
-                <label for="platform_pass">Senha*</label>
-                <input type="password" name="platform_pass" id="platform_pass" class="platform_pass modal_input" placeholder="Digite a senha" required>
-              </div>
-              <div class="btns">
-                <button class="btnCreate" type="submit" >Criar</button>
-                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
-              </div>
-            </form>
-            <!-------- CREATE FOLDER -------->
-            <form class="create_folder">
-              <div class="input_box">
-                <label for="new_folder">Nome da pasta</label>
-                <input type="text" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta" required>
-              </div>
-              <div class="btns">
-                <button class="btnCreate btn_create_folder" type="submit" >Criar</button>
-                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-
       <!------------- COFRE -------------->
       <section class="cofre">
         <div class="cofre_container container">
-          <!------------- FILTRAR EXIBIÇÕES DAS SENHAS -------------->
-          <nav class="cofre_header">
-            <div class="filter">
-              <button class="filter_btn">
-                <span class="filter_item">Todas as pastas</span>
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <ul class="filter_items">
-                <li class="all_folder" id="filter_item">Todas as pastas</li>
-                <li class="all_passwords" id="filter_item">Todas as senhas</li>
-              </ul>
-            </div>
-
-            <!------------- SEARCH -------------->
-            <form action="#" class="form_search">
-              <button 
-                type="submit" 
-                id="btn_search">
-                <i class="fas fa-search"></i>
-              </button>
-              <input 
-                type="search" 
-                name="input_search" 
-                id="input_search" 
-                placeholder="Procure uma senha"
-                required >
-            </form>
-          </nav>
+          <h1 class="main_title">Suas pastas</h1>
+          <hr class="bar">
          <!------------- CARDS -------------->
           <div class="cards_container">
              <ul class="cards"></ul>
@@ -190,29 +95,99 @@
         </div>
       </section>
 
+      <!--------- BOTÃO CREATE NEW ITEM ------------>
+      <div class="create_new">
+        <button class="btn_show_modal" title="Criar nova senha ou pasta">
+          <span><i class="fas fa-plus"></i></span>
+        </button>
+
+        <div class="modal_overlay">
+          <div class="create_new_modal">
+            <h2 class="title_heading">O que você deseja criar ?</h2>
+            <i class="fas fa-times close_modal close_icon" title="fechar modal"></i>
+  
+            <div class="options">
+              <button class="btn_options" type="button">
+                <div class="option_selected">
+                  <span class="option_text">Selecione uma opção</span>
+                </div>
+                <i class="fa-solid fa-caret-down"></i>
+              </button>
+  
+              <ul class="options_list">
+                <li class="options_list_item">
+                  <div class="option" id="folder">
+                    <i class="fa-solid fa-folder"></i>
+                    <span class="option_text">Nova pasta</span>
+                  </div>
+                </li>
+  
+                <li class="options_list_item">
+                  <div class="option" id="pass">
+                    <i class="fa-solid fa-lock"></i>
+                    <span class="option_text">Nova senha</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-------- CREATE PASSWORD -------->
+            <form action="" method="get" class="create_password">
+              <div class="input_box choose_platform">
+                <input type="text" id="choose_platform_input" class="choose_platform_input modal_input" placeholder="ou digite a plataforma" autocomplete="off" required >
+                <label for="choose_platform_input" class="label_choose">
+                  <span class="option_platform" >Selecione uma plataforma*</span>
+                  <i class="fa-solid fa-caret-down"></i>
+                </label>
+              </div>
+
+              <div class="input_box choose_folder">
+                <button class="modal_input" type="button">
+                  <span class="option_folder">Qual pasta salvar?</span>
+                  <i class="fa-solid fa-caret-down"></i>
+                </button>
+              </div>
+              
+              <div class="input_box platform_login">
+                <label for="platform_login">Login*</label>
+                <input type="text" id="platform_login_input" class="platform_login_input modal_input" placeholder="Digite o usuário ou email" required>
+              </div>
+  
+              <div class="input_box platform_pass">
+                <label for="platform_pass">Senha*</label>
+                <input type="password" id="platform_pass_input" class="platform_pass_input modal_input" placeholder="Digite a senha" required>
+              </div>
+
+              <div class="btns">
+                <button class="btnCreate" type="submit">Criar</button>
+                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
+              </div>
+            </form>
+            
+            <!-------- CREATE FOLDER -------->
+            <form action="" method="get" class="create_folder">
+              <div class="input_box">
+                <label for="new_folder">Nome da pasta</label>
+                <input type="text" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta" autocomplete="off" required>
+              </div>
+
+              <div class="btns">
+                <button class="btnCreate btn_create_folder close_modal" type="submit" >Criar</button>
+                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
       <footer class="footer">
         <a href="#" title="Desenvolvido pela equipe uPass">&copy; Desenvolvido por uPass</a>
       </footer>
     </main>
 
-    <!--<li class="card">
-      <div class="imgs_wrapper">
-        <img src="../images/netflix.png" alt="">
-      </div>
-      <div class="text">
-        <h2 id="name_folder">Redirecionamentos</h2>
-        <span id="total_pass">5 senhas</span>
-      </div>
-      <div class="config_card">
-        <i class="fas fa-ellipsis-h"></i>
-      </div>
-      <a href="#"></a>
-    </li> -->
+
 
     <!--------- MAIN SCRIPT --------->
     <script src="../js/script.js"></script>
-    <!--------- PAGE SCRIPT --------->
-    <script src="../js/filters.js"></script>
     <!------ CREATE NEW SCRIPT -------->
     <script src="../js/create_new.js"></script>
     <!------------- LINK FONTAWESOME ICONS -------------->
