@@ -101,82 +101,70 @@
           <span><i class="fas fa-plus"></i></span>
         </button>
 
-        <div class="modal_overlay">
           <div class="create_new_modal">
-            <h2 class="title_heading">O que você deseja criar ?</h2>
+            <h2 class="title_heading">Criar nova pasta</h2>
             <i class="fas fa-times close_modal close_icon" title="fechar modal"></i>
   
-            <div class="options">
-              <button class="btn_options" type="button">
-                <div class="option_selected">
-                  <span class="option_text">Selecione uma opção</span>
+
+            <div class="forms_create_new">
+              <form action="" method="get" class="form_create_folder active">
+                <div class="input_box">
+                  <label for="new_folder" onclick="openFolderPassword(e)">Nome da pasta</label>
+                  <input 
+                    type="text" 
+                    id="new_folder" 
+                    class="new_folder modal_input" 
+                    placeholder="Digite o nome da pasta" 
+                    autocomplete="off" 
+                    required>
                 </div>
-                <i class="fa-solid fa-caret-down"></i>
-              </button>
   
-              <ul class="options_list">
-                <li class="options_list_item">
-                  <div class="option" id="folder">
-                    <i class="fa-solid fa-folder"></i>
-                    <span class="option_text">Nova pasta</span>
-                  </div>
-                </li>
-  
-                <li class="options_list_item">
-                  <div class="option" id="pass">
-                    <i class="fa-solid fa-lock"></i>
-                    <span class="option_text">Nova senha</span>
-                  </div>
-                </li>
-              </ul>
+                <div class="btns">
+                  <button class="btnCreate btn_create_folder">Criar</button>
+                  <button type="button" class="btn_cancel close_modal" >Cancelar</button>
+                </div>
+              </form>
             </div>
             <!-------- CREATE PASSWORD -------->
-            <form action="" method="get" class="create_password">
-              <div class="input_box choose_platform">
-                <input type="text" id="choose_platform_input" class="choose_platform_input modal_input" placeholder="ou digite a plataforma" autocomplete="off" required >
-                <label for="choose_platform_input" class="label_choose">
-                  <span class="option_platform" >Selecione uma plataforma*</span>
-                  <i class="fa-solid fa-caret-down"></i>
-                </label>
+            <form action="" method="get" class="form_create_password">
+              <div class="input_box name_password">
+                <label for="input_name_password">Nome para senha (Opcional)</label>
+                <input 
+                  type="text" 
+                  id="input_name_password" 
+                  class="input_name_password modal_input" 
+                  placeholder="Digite nome para a senha">
               </div>
 
-              <div class="input_box choose_folder">
-                <button class="modal_input" type="button">
-                  <span class="option_folder">Qual pasta salvar?</span>
-                  <i class="fa-solid fa-caret-down"></i>
-                </button>
-              </div>
-              
               <div class="input_box platform_login">
-                <label for="platform_login">Login*</label>
-                <input type="text" id="platform_login_input" class="platform_login_input modal_input" placeholder="Digite o usuário ou email" required>
+                <label for="input_platform_login">Login*</label>
+                <input 
+                  type="text" 
+                  id="input_platform_login" 
+                  class="input_platform_login modal_input" 
+                  placeholder="Digite o usuário ou email" 
+                  required>
               </div>
   
-              <div class="input_box platform_pass">
-                <label for="platform_pass">Senha*</label>
-                <input type="password" id="platform_pass_input" class="platform_pass_input modal_input" placeholder="Digite a senha" required>
+              <div class="input_box platform_password">
+                <label for="input_platform_password">Senha*</label>
+                <input 
+                  type="password" 
+                  id="input_platform_password" 
+                  class="input_platform_password modal_input" 
+                  placeholder="Digite a senha" 
+                  required>
               </div>
 
               <div class="btns">
-                <button class="btnCreate" type="submit">Criar</button>
+                <button class="btnCreate btn_create_password">Criar</button>
                 <button type="button" class="btn_cancel close_modal" >Cancelar</button>
               </div>
             </form>
             
             <!-------- CREATE FOLDER -------->
-            <form action="" method="get" class="create_folder">
-              <div class="input_box">
-                <label for="new_folder">Nome da pasta</label>
-                <input type="text" name="new_folder" id="new_folder" class="new_folder modal_input" placeholder="Digite o nome da pasta" autocomplete="off" required>
-              </div>
 
-              <div class="btns">
-                <button class="btnCreate btn_create_folder close_modal" type="submit" >Criar</button>
-                <button type="button" class="btn_cancel close_modal" >Cancelar</button>
-              </div>
-            </form>
           </div>
-        </div>
       </div>
 
       <footer class="footer">
@@ -189,7 +177,9 @@
     <!--------- MAIN SCRIPT --------->
     <script src="../js/script.js"></script>
     <!------ CREATE NEW SCRIPT -------->
-    <script src="../js/create_new.js"></script>
+    <script src="../js/create-new.js"></script>
+    <!-------------SHOW MODAL -------------->
+    <script src="../js/show-modal-create.js"></script>
     <!------------- LINK FONTAWESOME ICONS -------------->
     <script src="https://kit.fontawesome.com/156a0949b0.js" crossorigin="anonymous"></script>
   </body>
