@@ -11,101 +11,65 @@
 
 }
 
+.back_folders {
+  cursor: pointer;
+  font-size: 3rem;
+  color: var(--color-primary);
+  margin-right: 1rem;
+}
+
+.back_folders:hover {
+  color: var(--color-primary-dark);
+}
+
 .cofre .cards_container .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .cofre .card {
   text-align: center;
   padding: 1rem;
   position: relative;
+  cursor: pointer;
 }
 
 .cofre .card:hover {
   background-color: #ccc;
 }
 
-.cofre .card .img_folder {
+.cofre .card .img_folder,
+.cofre .card .img_password {
   margin: 0 auto 1rem;
   width: auto;
   height: 5rem;
   object-fit: cover;
   border-radius: 1rem;
+  display: block;
+  pointer-events: none;
 }
 
 .cofre .card .folder_name {
-  font-size: 1.7rem;
-  font-weight: 600;
-}
-
-.cofre .card .total_pass {
-  font-size: 1.5rem;
-  color: #777;
-}
-
-.cofre .card .folder_link {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.cofre .more_folder {
-  background-color: var(--color-primary) !important;
-}
-
-.cofre .more_folder:hover {
-  background-color: var(--color-primary-dark) !important;
-}
-
-.cofre .more_folder .show_modal {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-.cofre .more_folder .show_modal span {
-  display: block;
-}
-
-.cofre .more_folder .show_modal .more_folder_title {
-  color: #fff;
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.cofre .more_folder .show_modal .more_folder_button {
-  background-color: var(--color-white);
-  padding: .5rem 1rem;
-  color: var(--color-black-light);
   font-size: 1.8rem;
   font-weight: 600;
-  width: max-content;
-  margin: 0 auto;
-  border-radius: 1rem;
+  pointer-events: none;
 }
 
-.config_card {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0 .5rem;
-  transition: all 300ms linear;
+.cofre .card .login_pass,
+.cofre .card .pass,
+.cofre .card .name_password {
+  display: block;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: var(--color-black-light);
 }
 
-.config_card:hover {
-  opacity: .6;
+.cofre .card .name_password {
+  font-size: 2rem;
+  color: var(--color-black);
 }
 
-
+.footer {
+  margin-top: 70vh;
+}
 
