@@ -73,3 +73,9 @@
   margin-top: 70vh;
 }
 
+@media (max-width: 400px) {
+  .cofre .cards_container .cards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
