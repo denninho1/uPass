@@ -9,7 +9,6 @@ hidePassword.forEach(eye => {
         inputPassword.forEach(inputPass => {
             if (inputPass.type === "password") {
                 inputPass.type = "text";
-                
                 hidePassword.forEach(eyeIcon => {
                     eyeIcon.classList.replace("fa-eye-slash", "fa-eye");
                 })
@@ -51,6 +50,17 @@ function validateInputsLogin() {
     let userValue = loginInputUser_Email.value;
     let PassValue = loginInputPass.value;
 
+    const userLocalData = JSON.parse(localStorage.getItem(userValue));
+    if(userLocalData.registerPassConfirmValue === PassValue) {
+        console.log(userLocalData)
+        showUsername(userValue)
+        noLoggedContainer.remove()
+        localStorage.setItem("userLogged", userValue);
+        /* window.location.href = "./meu-cofre.html"; */
+    } else {
+        loginTextError.innerText = "A senha ou login está incorreta";
+    }
+
     if (userValue === '' && PassValue === '' ){
         loginTextError.classList.add('invalid');
         loginTextError.innerText = "Preencha os campos abaixo";
@@ -90,6 +100,8 @@ function validateInputsRegister () {
     let registerPassValue = registerInputPass.value;
     let registerPassConfirmValue = registerInputConfirmPass.value;
 
+    localStorage.setItem(registerNameValue, JSON.stringify({registerEmailValue, registerPassValue, registerPassConfirmValue}));
+
     if (registerNameValue === '' && 
         registerEmailValue === '' && 
         registerPassValue === '' && 
@@ -119,6 +131,19 @@ function validateInputsRegister () {
     }
 }
 
+const noLoggedContainer = document.querySelector('.user_no_login')
+const userContainer = document.querySelector('.user_login')
+
+function showUsername(username) {
+
+    const usernameContainer = document.createElement('span')
+    usernameContainer.innerHTML = username;
+    userContainer.style.display = 'block'
+
+    userContainer.innerHTML = ''
+    userContainer.appendChild(usernameContainer)
+}
+
 btnFormLogin.addEventListener('click', e => {
     e.preventDefault();
     validateInputsLogin();
@@ -128,3 +153,16 @@ btnFormRegister.addEventListener('click', e => {
     e.preventDefault();
     validateInputsRegister()
 });
+
+const asyncLocalStorage = {
+    setItem: (key, value) => {
+        return Promise.resolve().then(function () {
+            localStorage.setItem(key, value);
+        });
+    },
+    getItem: (key) => {
+        return Promise.resolve().then(function () {
+            return localStorage.getItem(key);
+        });
+    }
+};
